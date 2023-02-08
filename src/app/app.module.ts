@@ -12,10 +12,13 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { CabeceraComponent } from './cabecera/cabecera.component';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
+import { InformacionComponent } from './informacion/informacion.component';
 
 const rutas:Routes = [
-  {path:'listado-libros', component: LibrosComponent},
   {path:'', component: InicioComponent, pathMatch: 'full'},
+  {path:'listado-libros', component: LibrosComponent},
+  {path:'informacion/:libroId',component: InformacionComponent},
+  {path:'informacion', redirectTo: '/'},
   {path:'**', redirectTo: '/'}
 ]
   
@@ -29,7 +32,8 @@ const rutas:Routes = [
     LibrosComponent,
     ServiciosComponent,
     CabeceraComponent,
-    InicioComponent
+    InicioComponent,
+    InformacionComponent
   ],
   imports: [
     BrowserModule,
