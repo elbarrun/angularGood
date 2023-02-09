@@ -13,8 +13,9 @@ import { CabeceraComponent } from './cabecera/cabecera.component';
 import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
 import { InformacionComponent } from './informacion/informacion.component';
+import { LibroclickedService } from './libroclicked.service';
 
-const rutas:Routes = [
+const routes:Routes = [
   {path:'', component: InicioComponent, pathMatch: 'full'},
   {path:'listado-libros', component: LibrosComponent},
   {path:'informacion/:libroId',component: InformacionComponent},
@@ -39,10 +40,12 @@ const rutas:Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(rutas)
+    RouterModule.forRoot(routes)
 
   ],
-  providers: [],
+  providers: [
+    LibroclickedService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
