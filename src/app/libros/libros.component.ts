@@ -1,24 +1,29 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LibroclickedService } from '../libroclicked.service';
+import {HttpClient, HttpResponse} from '@angular/common/http'
 
 @Component({
   selector: 'app-libros',
   templateUrl: './libros.component.html',
   styleUrls: ['./libros.component.css']
 })
-export class LibrosComponent {
-  libros: Array <any>;
-  verAutor:any;
+export class LibrosComponent implements OnInit {
+  libros: any;
+    
+  constructor (private http: HttpClient, public Libroclicked:LibroclickedService){
+
+    }
   
-  constructor (){
-    //this.libros = ["Harry potter", "Los 7 habitos", "La celestina"]
-    this.libros = [
-      {id:'1', titulo: 'Te veré bajo el hielo', autor:'Robert Bryndza'},
-      {id:'2', titulo: 'Dime quién soy', autor:'Julia Navarro'},
-      {id:'3', titulo: 'El día que se perdió la cordura', autor:'Javier Castillo'}
-      ]
-    }
-    showAuthor(_libro:any){
-      this.verAutor="Esta escrito por: " + _libro.autor;
-      alert(this.verAutor);
-    }
+  ngOnInit(): void{
+    this.cargarLista();
+  }
+  
+  cargarLista(){
+    this.http.get('./assets/lista-libros.json').subscribe(
+      data => {this.libros = data;}
+    );
+  }
+agregarLibro(_libroVisto:any){
+  this.Libroclicked.libroVisto(_libroVisto);
+}
 }

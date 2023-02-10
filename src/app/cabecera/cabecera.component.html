@@ -3,4 +3,11 @@
 <p>cabecera works!</p>
 <a class="button" [routerLink]="['/listado-libros']">Listado Libros</a>
 <a class="button" href="/">Inicio</a>
+
+<h2>Libros Vistos</h2>
+<ul *ngIf="librosVistos.verListado()">
+    <li *ngFor="let libro of librosVistos.verListado()">
+        {{libro.titulo}}
+    </li>
+</ul>
 </div>

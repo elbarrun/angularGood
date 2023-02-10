@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { LibroclickedService } from '../libroclicked.service';
 
 @Component({
   selector: 'app-cabecera',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./cabecera.component.css']
 })
 export class CabeceraComponent {
+  constructor (public librosVistos:LibroclickedService){}
 
+  ngOnInit(): void{}
 }

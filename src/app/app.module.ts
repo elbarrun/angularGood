@@ -14,6 +14,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { InicioComponent } from './inicio/inicio.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { LibroclickedService } from './libroclicked.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const routes:Routes = [
   {path:'', component: InicioComponent, pathMatch: 'full'},
@@ -40,7 +41,8 @@ const routes:Routes = [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
 
   ],
   providers: [
