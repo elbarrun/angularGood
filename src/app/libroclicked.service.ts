@@ -1,22 +1,25 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class LibroclickedService {
-  libros: Array<object>
 
-  constructor() { 
-    this.libros=[];
+  libros: any;
+
+  constructor(private http: HttpClient) {
+    this.libros = [];
   }
 
-  libroVisto(libroVisto:any){
+  libroVisto(libroVisto: any) {
     this.libros.push(libroVisto);
   }
-  verListado(){
-    if(this.libros.length > 0){
-      return this.libros
-    }else{
+
+  verListado() {
+    if (this.libros.length > 0) {
+      return this.libros;
+    } else {
       return false;
     }
   }

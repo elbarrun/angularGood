@@ -1,0 +1,17 @@
+[
+  {
+      "id": "1",
+      "titulo": "Harry Potter",
+      "autor": "JFK Rowling"
+  },
+  {
+      "id": "2",
+      "titulo": "La celestina",
+      "autor": "Anonimo"
+  },
+  {
+      "id": "3",
+      "titulo": "Soltar lastre",
+      "autor": "Alvaro Lobo"
+  }
+]

@@ -1,13 +1,12 @@
-<link rel="stylesheet" href="https://unpkg.com/chota">
+<link rel="stylesheet" href="https://unpkg.com/chota" />
 <div class="content">
-<p>cabecera works!</p>
-<a class="button" [routerLink]="['/listado-libros']">Listado Libros</a>
-<a class="button" href="/">Inicio</a>
+    <a [routerLink]="['/listado-libros']" class="button">Listado libros</a>
+    <a href="/" class="button">Inicio</a>
 
-<h2>Libros Vistos</h2>
-<ul *ngIf="librosVistos.verListado()">
-    <li *ngFor="let libro of librosVistos.verListado()">
-        {{libro.titulo}}
-    </li>
-</ul>
+    <h2>Libros Vistos</h2>
+    <ul *ngIf="librosVistos.verListado()">
+        <li *ngFor="let libro of librosVistos.verListado()">
+            {{libro.titulo}}
+        </li>
+    </ul>
 </div>
